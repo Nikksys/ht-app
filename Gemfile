@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+#Render components in views or controller actions
 gem 'react-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -30,6 +32,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails', '~> 5.0.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 

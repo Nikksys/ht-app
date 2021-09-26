@@ -1,5 +1,9 @@
 <%= react_component("PeopleForm", {person: @person, action: @url, method: @meth}.to_json, prerender: false) %>
-
-
-
-
+<% if @person.errors.any? %>
+  <h3>Los siguientes errores impidieron que se guardara la persona:</h3>
+  <ul>
+    <% @person.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li> 
+    <% end %>
+  </ul>
+<% end %>

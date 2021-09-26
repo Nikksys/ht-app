@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listado de personas registradas</h1>
-<%= link_to "nueva persona", new_person_path%>
-<%=react_component("Index", @people.to_json, prerender: true)%>
+<%= link_to "nueva persona", new_person_path, class: "new_link"%>
+<%=react_component("Index", @people.to_json, prerender: false, class: "people-table")%>
 
