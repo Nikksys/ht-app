@@ -4,13 +4,13 @@ function Index(props) {
    let people = props.data
    
    
-   function handleDelete(e) {
-     e.preventDefault();
+   function handleDelete(id) {
+     
      $.ajax({
        method: 'DELETE',
-       url: '/people/' + props.id,
+       url: '/people/' + id,
        success: function(data) {
-         alert('deleted ok');
+          
        },
        error: function(xhr, status, error) {
          alert('Cannot delete requested record: ', error);
@@ -37,7 +37,7 @@ function Index(props) {
                 <td> {person.appellido} </td>
                 <td> {person.telefono} </td>
                 <td> <a href={"people/" + person.id + "/edit"}>  ☑️ </a> </td>
-                <td> <a onClick={ handleDelete }>☑️</a> </td>
+                <td> <a onClick={ () => confirm("Quiere eliminar a " + person.nombre + " ?") === true ?  handleDelete(person.id) : ""}>☑️</a> </td>
               </tr>)
               )
             }
